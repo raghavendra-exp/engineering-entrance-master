@@ -26,15 +26,4 @@ jobs:
         run: npm run build
 
       - name: Verify Question Count Integrity
-        run: |
-          node -e '
-            import("./src/data/questions/index.ts").then(m => {
-              console.log("Total Questions in DB:", m.TOTAL_QUESTIONS_COUNT);
-              if (m.TOTAL_QUESTIONS_COUNT < 1000) {
-                console.error("Error: Questions count below minimum threshold of 1000!");
-                process.exit(1);
-              }
-              console.log("Verified PYQs count:", m.VERIFIED_PYQS_COUNT);
-              console.log("All question database sanity checks PASSED.");
-            });
-          '
+        run: node scripts/verify_content.js
