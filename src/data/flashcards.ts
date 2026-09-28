@@ -1,0 +1,285 @@
+import type { Flashcard } from '../types';
+
+export const FLASHCARDS_DATA: Flashcard[] = [
+  // ==================== PHYSICS FLASHCARDS ====================
+  {
+    id: 'fc-phy-01',
+    subject: 'Physics',
+    chapter: 'Kinematics',
+    front: 'What is the radius of curvature of a projectile at its highest point (launch speed u, angle \\theta)?',
+    hindiFront: 'प्रक्षेप्य गति में उच्चतम बिंदु पर वक्रता त्रिज्या क्या होती है (प्रारंभिक वेग u, कोण \\theta)?',
+    back: '\\rho = \\frac{u^2 \\cos^2\\theta}{g}',
+    hindiBack: '\\rho = \\frac{u^2 \\cos^2\\theta}{g}',
+    formulaOrReaction: '\\rho = \\frac{v^2}{a_\\perp} = \\frac{(u\\cos\\theta)^2}{g}',
+    tags: ['Mechanics', 'Kinematics', 'Curvature'],
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc-phy-02',
+    subject: 'Physics',
+    chapter: 'Work, Energy and Power',
+    front: 'What is the minimum speed required at the lowest point of a vertical circle for a mass attached to a string of length L to complete the loop?',
+    hindiFront: 'लम्बाई L की डोरी से बंधी वस्तु को ऊर्ध्वाधर वृत्त पूरा करने के लिए निम्नतम बिंदु पर आवश्यक न्यूनतम चाल क्या है?',
+    back: 'v_{min} = \\sqrt{5gL}',
+    hindiBack: 'v_{min} = \\sqrt{5gL}',
+    formulaOrReaction: 'T_{top} \\ge 0 \\implies v_{top} = \\sqrt{gL} \\implies v_{bottom} = \\sqrt{5gL}',
+    tags: ['Mechanics', 'Circular Motion', 'Energy Conservation'],
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc-phy-03',
+    subject: 'Physics',
+    chapter: 'Rotational Motion',
+    front: 'What is the ratio of translational kinetic energy to rotational kinetic energy for a solid sphere in pure rolling?',
+    hindiFront: 'शुद्ध लोटनी गति कर रहे एक ठोस गोले के लिए स्थानांतरीय गतिज ऊर्जा तथा घूर्णन गतिज ऊर्जा का अनुपात क्या है?',
+    back: 'K_{trans} : K_{rot} = 5 : 2',
+    hindiBack: 'K_{trans} : K_{rot} = 5 : 2',
+    formulaOrReaction: '\\frac{K_{trans}}{K_{rot}} = \\frac{\\frac{1}{2} M v^2}{\\frac{1}{2} I \\omega^2} = \\frac{M R^2}{I_{cm}} = \\frac{M R^2}{\\frac{2}{5} M R^2} = \\frac{5}{2}',
+    tags: ['Rotational Motion', 'Rolling', 'Kinetic Energy'],
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc-phy-04',
+    subject: 'Physics',
+    chapter: 'Gravitation',
+    front: 'At what height above the Earth’s surface does the acceleration due to gravity become g/4?',
+    hindiFront: 'पृथ्वी की सतह से किस ऊंचाई पर गुरुत्वीय त्वरण g/4 हो जाता है?',
+    back: 'h = R (where R is the Earth’s radius)',
+    hindiBack: 'h = R (जहाँ R पृथ्वी की त्रिज्या है)',
+    formulaOrReaction: 'g_h = g \\left(\\frac{R}{R + h}\\right)^2 = \\frac{g}{4} \\implies \\frac{R}{R+h} = \\frac{1}{2} \\implies h = R',
+    tags: ['Gravitation', 'Acceleration due to gravity'],
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc-phy-05',
+    subject: 'Physics',
+    chapter: 'Thermodynamics',
+    front: 'For an adiabatic process of an ideal gas, state the relationship between Temperature and Volume.',
+    hindiFront: 'आदर्श गैस के रुद्धोष्म प्रक्रम के लिए ताप और आयतन के बीच संबंध बताइए।',
+    back: 'T \\cdot V^{\\gamma - 1} = \\text{constant}',
+    hindiBack: 'T \\cdot V^{\\gamma - 1} = \\text{नियतांक}',
+    formulaOrReaction: 'P V^\\gamma = \\text{const} \\xrightarrow{P = nRT/V} T V^{\\gamma - 1} = \\text{const}',
+    tags: ['Thermodynamics', 'Adiabatic', 'Gas Laws'],
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc-phy-06',
+    subject: 'Physics',
+    chapter: 'Electrostatics',
+    front: 'What is the electric field inside a uniformly charged non-conducting solid sphere of radius R and charge Q at distance r from the center (r < R)?',
+    hindiFront: 'त्रिज्या R और आवेश Q वाले एकसमान आवेशित अचालक ठोस गोले के अंदर केंद्र से r दूरी पर (r < R) विद्युत क्षेत्र क्या होता है?',
+    back: 'E = \\frac{Q r}{4\\pi \\varepsilon_0 R^3} = \\frac{\\rho r}{3\\varepsilon_0}',
+    hindiBack: 'E = \\frac{Q r}{4\\pi \\varepsilon_0 R^3} = \\frac{\\rho r}{3\\varepsilon_0}',
+    formulaOrReaction: 'E \\propto r \\quad \\text{inside non-conducting sphere}',
+    tags: ['Electrostatics', 'Gauss Law', 'Electric Field'],
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc-phy-07',
+    subject: 'Physics',
+    chapter: 'Current Electricity',
+    front: 'What is the condition for maximum power transfer from a battery with emf \\mathcal{E} and internal resistance r to a load resistor R?',
+    hindiFront: 'वि.वा.बल \\mathcal{E} और आंतरिक प्रतिरोध r वाली बैटरी से लोड प्रतिरोध R को अधिकतम शक्ति स्थानांतरित करने की शर्त क्या है?',
+    back: 'R = r (Load resistance equals internal resistance). Maximum Power P_{max} = \\frac{\\mathcal{E}^2}{4r}',
+    hindiBack: 'R = r (लोड प्रतिरोध आंतरिक प्रतिरोध के बराबर हो)। अधिकतम शक्ति = \\mathcal{E}^2 / 4r',
+    formulaOrReaction: 'P = I^2 R = \\frac{\\mathcal{E}^2 R}{(R+r)^2} \\xrightarrow{\\frac{dP}{dR} = 0} R = r',
+    tags: ['Current Electricity', 'Power Transfer', 'Circuits'],
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc-phy-08',
+    subject: 'Physics',
+    chapter: 'Electromagnetic Induction',
+    front: 'A conducting rod of length L rotates with angular velocity \\omega about one end in a perpendicular magnetic field B. What is the induced EMF between its ends?',
+    hindiFront: 'एक चालक छड़ (लंबाई L) एक सिरे के परितः लंबवत चुंबकीय क्षेत्र B में कोणीय वेग \\omega से घूमती है। इसके सिरों के बीच प्रेरित वि.वा.बल क्या है?',
+    back: '\\mathcal{E} = \\frac{1}{2} B \\omega L^2',
+    hindiBack: '\\mathcal{E} = \\frac{1}{2} B \\omega L^2',
+    formulaOrReaction: '\\mathcal{E} = \\int_0^L B v dr = \\int_0^L B (\\omega r) dr = \\frac{1}{2} B \\omega L^2',
+    tags: ['EMI', 'Motional EMF', 'Rotation'],
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc-phy-09',
+    subject: 'Physics',
+    chapter: 'Modern Physics',
+    front: 'What is the ratio of de Broglie wavelength of an electron accelerated through V volts to that of a proton accelerated through same V volts?',
+    hindiFront: 'V वोल्ट विभवान्तर से त्वरित इलेक्ट्रॉन तथा प्रोटॉन की डी ब्रोग्ली तरंगदैर्घ्य का अनुपात क्या है?',
+    back: '\\frac{\\lambda_e}{\\lambda_p} = \\sqrt{\\frac{m_p}{m_e}} \\approx \\sqrt{1836} \\approx 42.8',
+    hindiBack: '\\frac{\\lambda_e}{\\lambda_p} = \\sqrt{\\frac{m_p}{m_e}} \\approx 42.8',
+    formulaOrReaction: '\\lambda = \\frac{h}{\\sqrt{2mqV}} \\implies \\frac{\\lambda_e}{\\lambda_p} = \\sqrt{\\frac{m_p q_p}{m_e q_e}} = \\sqrt{\\frac{m_p}{m_e}}',
+    tags: ['Modern Physics', 'de Broglie', 'Quantum'],
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc-phy-10',
+    subject: 'Physics',
+    chapter: 'Optics',
+    front: 'What is the change in fringe width in YDSE if the entire apparatus is immersed in a liquid of refractive index \\mu?',
+    hindiFront: 'यदि वाईडीएसई उपकरण को अपवर्तनांक \\mu वाले द्रव में डुबो दिया जाए तो फ्रिंज चौड़ाई में क्या परिवर्तन होगा?',
+    back: '\\beta\' = \\frac{\\beta}{\\mu} (Fringe width decreases by factor \\mu)',
+    hindiBack: '\\beta\' = \\frac{\\beta}{\\mu} (फ्रिंज चौड़ाई \\mu गुना घट जाती है)',
+    formulaOrReaction: '\\lambda\' = \\frac{\\lambda}{\\mu} \\implies \\beta\' = \\frac{\\lambda\' D}{d} = \\frac{\\beta}{\\mu}',
+    tags: ['Optics', 'Wave Optics', 'YDSE'],
+    difficulty: 'easy'
+  },
+
+  // ==================== CHEMISTRY FLASHCARDS ====================
+  {
+    id: 'fc-chem-01',
+    subject: 'Chemistry',
+    chapter: 'Chemical Bonding',
+    front: 'According to Molecular Orbital Theory (MOT), what is the bond order and magnetic nature of O2, O2+, and O2-?',
+    hindiFront: 'आण्विक कक्षक सिद्धांत (MOT) के अनुसार O2, O2+ और O2- का बंध क्रम एवं चुंबकीय प्रकृति क्या है?',
+    back: 'O2 (16 e-): Bond Order = 2, Paramagnetic (2 unpaired e- in \\pi^*2p)\nO2+ (15 e-): Bond Order = 2.5, Paramagnetic\nO2- (17 e-): Bond Order = 1.5, Paramagnetic',
+    hindiBack: 'O2: बंध क्रम = 2 (अनुचुंबकीय)\nO2+: बंध क्रम = 2.5 (अनुचुंबकीय)\nO2-: बंध क्रम = 1.5 (अनुचुंबकीय)',
+    formulaOrReaction: '\\text{Bond Order} = \\frac{N_b - N_a}{2}',
+    tags: ['Inorganic', 'Chemical Bonding', 'MOT'],
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc-chem-02',
+    subject: 'Chemistry',
+    chapter: 'Solutions',
+    front: 'What is the van ’t Hoff factor (i) for potassium ferrocyanide K4[Fe(CN)6] undergoing 80% dissociation in aqueous solution?',
+    hindiFront: 'जलीय विलयन में 80% वियोजित होने वाले पोटैशियम फेरोसाइनाइड K4[Fe(CN)6] के लिए वान्ट हॉफ कारक (i) क्या है?',
+    back: 'i = 4.2',
+    hindiBack: 'i = 4.2',
+    formulaOrReaction: 'K_4[Fe(CN)_6] \\longrightarrow 4K^+ + [Fe(CN)_6]^{4-} \\implies n = 5; \\quad i = 1 + (n - 1)\\alpha = 1 + (5 - 1)(0.8) = 1 + 3.2 = 4.2',
+    tags: ['Physical Chemistry', 'Solutions', 'van t Hoff'],
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc-chem-03',
+    subject: 'Chemistry',
+    chapter: 'Chemical Kinetics',
+    front: 'For a first-order reaction, what percentage of the reaction is completed after a time equal to 10 half-lives (10 \\times t_{1/2})?',
+    hindiFront: 'प्रथम कोटि की अभिक्रिया के लिए 10 अर्ध-आयु काल के बाद कितने प्रतिशत अभिक्रिया पूर्ण हो जाती है?',
+    back: '99.9% complete (Remaining fraction = (1/2)^10 = 1/1024 \\approx 0.098%)',
+    hindiBack: '99.9% पूर्ण (शेष अंश = (1/2)^10 \\approx 0.1%)',
+    formulaOrReaction: '[A]_t = [A]_0 \\left(\\frac{1}{2}\\right)^n = \\frac{[A]_0}{1024} \\approx 0.000976 [A]_0',
+    tags: ['Physical Chemistry', 'Kinetics', 'Half-Life'],
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc-chem-04',
+    subject: 'Chemistry',
+    chapter: 'Coordination Compounds',
+    front: 'What is the hybridization, geometry, and magnetic moment of [Ni(CN)4]2- versus [NiCl4]2-?',
+    hindiFront: '[Ni(CN)4]2- तथा [NiCl4]2- का संकरण, ज्यामिति तथा चुंबकीय आघूर्ण क्या है?',
+    back: '[Ni(CN)4]2-: dsp2, Square planar, Diamagnetic (\\mu = 0 BM) because CN^- is a strong field ligand causing pairing.\n[NiCl4]2-: sp3, Tetrahedral, Paramagnetic (\\mu = \\sqrt{2(2+2)} = \\sqrt{8} \\approx 2.83 BM) because Cl^- is weak field.',
+    hindiBack: '[Ni(CN)4]2-: dsp2, वर्ग समतलीय, प्रतिचुंबकीय (\\mu = 0)\n[NiCl4]2-: sp3, चतुष्फलकीय, अनुचुंबकीय (\\mu \\approx 2.83 BM)',
+    formulaOrReaction: 'Ni^{2+} = [Ar] 3d^8',
+    tags: ['Inorganic', 'Coordination', 'CFT', 'Hybridization'],
+    difficulty: 'hard'
+  },
+  {
+    id: 'fc-chem-05',
+    subject: 'Chemistry',
+    chapter: 'Aldehydes, Ketones and Carboxylic Acids',
+    front: 'Which carbonyl compounds give a positive Iodoform test (formation of yellow precipitate of CHI3)?',
+    hindiFront: 'कौन से कार्बोनिल यौगिक धनात्मक आयोडोफॉर्म परीक्षण देते हैं (CHI3 का पीला अवक्षेप)?',
+    back: 'Compounds containing the methyl carbonyl group (CH3-C=O) or methyl carbinol group (CH3-CH(OH)-). Examples: Acetaldehyde, all methyl ketones (e.g. acetone, acetophenone), Ethanol, and secondary alcohols with 2-ol position.',
+    hindiBack: 'वे यौगिक जिनमें CH3-C=O या CH3-CH(OH)- समूह होता है (जैसे ऐसीटैल्डिहाइड, ऐसीटोन, एथेनॉल)।',
+    formulaOrReaction: '\\text{R-COCH}_3 + 3\\text{I}_2 + 4\\text{NaOH} \\longrightarrow \\text{CHI}_3\\downarrow + \\text{R-COONa} + 3\\text{NaI} + 3\\text{H}_2\\text{O}',
+    tags: ['Organic', 'Named Tests', 'Iodoform'],
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc-chem-06',
+    subject: 'Chemistry',
+    chapter: 'GOC',
+    front: 'What is the stability order of 1°, 2°, 3° free radicals, and which electronic effect governs it?',
+    hindiFront: '1°, 2°, 3° मुक्त मूलकों का स्थायित्व क्रम क्या है और यह किस प्रभाव द्वारा निर्धारित होता है?',
+    back: '3° > 2° > 1° > Methyl free radical. Governed primarily by Hyperconjugation (number of \\alpha-hydrogens) and Resonance stabilization where present.',
+    hindiBack: '3° > 2° > 1° > मेथिल मुक्त मूलक (अतिसंयुग्मन / \\alpha-हाइड्रोजन की संख्या द्वारा निर्धारित)।',
+    formulaOrReaction: '(CH_3)_3C^\\bullet (9\\alpha-H) > (CH_3)_2CH^\\bullet (6\\alpha-H) > CH_3CH_2^\\bullet (3\\alpha-H) > ^\\bullet CH_3 (0\\alpha-H)',
+    tags: ['Organic', 'GOC', 'Intermediates'],
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc-chem-07',
+    subject: 'Chemistry',
+    chapter: 'Amines',
+    front: 'What is the product and significance of the Hoffmann Bromamide Degradation reaction?',
+    hindiFront: 'हॉफमैन ब्रोमामाइड निम्नीकरण अभिक्रिया का उत्पाद एवं महत्व क्या है?',
+    back: 'Converts a primary acid amide (R-CONH2) into a primary aliphatic or aromatic amine (R-NH2) containing ONE LESS carbon atom.',
+    hindiBack: 'प्राथमिक ऐमाइड को एक कम कार्बन वाले प्राथमिक ऐमीन में परिवर्तित करता है।',
+    formulaOrReaction: '\\text{R-CONH}_2 + \\text{Br}_2 + 4\\text{KOH} \\longrightarrow \\text{R-NH}_2 + \\text{K}_2\\text{CO}_3 + 2\\text{KBr} + 2\\text{H}_2\\text{O}',
+    tags: ['Organic', 'Named Reactions', 'Amines'],
+    difficulty: 'easy'
+  },
+
+  // ==================== MATHEMATICS FLASHCARDS ====================
+  {
+    id: 'fc-math-01',
+    subject: 'Mathematics',
+    chapter: 'Differential Calculus',
+    front: 'What is the value of \\lim_{x \\to 0} (1 + ax)^{b/x}?',
+    hindiFront: '\\lim_{x \\to 0} (1 + ax)^{b/x} का मान क्या है?',
+    back: 'e^{ab}',
+    hindiBack: 'e^{ab}',
+    formulaOrReaction: '\\lim_{x \\to 0} (1 + f(x))^{g(x)} = e^{\\lim_{x \\to 0} f(x) g(x)} = e^{\\lim (ax)(b/x)} = e^{ab}',
+    tags: ['Calculus', 'Limits', 'Indeterminate Forms'],
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc-math-02',
+    subject: 'Mathematics',
+    chapter: 'Integral Calculus',
+    front: 'What is King’s Property in Definite Integrals?',
+    hindiFront: 'निश्चित समाकलनों में "किंग्स प्रॉपर्टी" क्या है?',
+    back: '\\int_a^b f(x) dx = \\int_a^b f(a + b - x) dx. Special case: \\int_0^a f(x) dx = \\int_0^a f(a - x) dx',
+    hindiBack: '\\int_a^b f(x) dx = \\int_a^b f(a + b - x) dx',
+    formulaOrReaction: '\\int_a^b f(x) dx = \\int_a^b f(a + b - x) dx',
+    tags: ['Calculus', 'Definite Integrals', 'Properties'],
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc-math-03',
+    subject: 'Mathematics',
+    chapter: 'Coordinate Geometry',
+    front: 'What is the condition of tangency for line y = mx + c to the parabola y^2 = 4ax?',
+    hindiFront: 'परवलय y^2 = 4ax पर रेखा y = mx + c के स्पर्श रेखा होने की शर्त क्या है?',
+    back: 'c = \\frac{a}{m} (where m \\ne 0). Equation of tangent: y = mx + \\frac{a}{m}',
+    hindiBack: 'c = \\frac{a}{m} (स्पर्श रेखा: y = mx + a/m)',
+    formulaOrReaction: 'y = mx + \\frac{a}{m}, \\quad \\text{Point of contact: } \\left(\\frac{a}{m^2}, \\frac{2a}{m}\\right)',
+    tags: ['Coordinate Geometry', 'Parabola', 'Tangents'],
+    difficulty: 'easy'
+  },
+  {
+    id: 'fc-math-04',
+    subject: 'Mathematics',
+    chapter: 'Vectors and 3D',
+    front: 'What is the formula for the shortest distance between two skew lines \\vec{r} = \\vec{a}_1 + \\lambda \\vec{b}_1 and \\vec{r} = \\vec{a}_2 + \\mu \\vec{b}_2?',
+    hindiFront: 'दो विषमतलीय रेखाओं \\vec{r} = \\vec{a}_1 + \\lambda \\vec{b}_1 तथा \\vec{r} = \\vec{a}_2 + \\mu \\vec{b}_2 के बीच न्यूनतम दूरी का सूत्र क्या है?',
+    back: 'd = \\frac{|(\\vec{a}_2 - \\vec{a}_1) \\cdot (\\vec{b}_1 \\times \\vec{b}_2)|}{|\\vec{b}_1 \\times \\vec{b}_2|}',
+    hindiBack: 'd = \\frac{|(\\vec{a}_2 - \\vec{a}_1) \\cdot (\\vec{b}_1 \\times \\vec{b}_2)|}{|\\vec{b}_1 \\times \\vec{b}_2|}',
+    formulaOrReaction: 'd = \\frac{|[\\vec{a}_2 - \\vec{a}_1, \\, \\vec{b}_1, \\, \\vec{b}_2]|}{|\\vec{b}_1 \\times \\vec{b}_2|}',
+    tags: ['Vectors & 3D', 'Lines', 'Shortest Distance'],
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc-math-05',
+    subject: 'Mathematics',
+    chapter: 'Matrices and Determinants',
+    front: 'For an n \\times n non-singular square matrix A, what is |\\text{adj}(A)| and \\text{adj}(\\text{adj}(A))?',
+    hindiFront: 'एक n \\times n व्युत्क्रमणीय वर्ग आव्यूह A के लिए |adj(A)| तथा adj(adj(A)) क्या होता है?',
+    back: '|\\text{adj}(A)| = |A|^{n-1}\n\\text{adj}(\\text{adj}(A)) = |A|^{n-2} A',
+    hindiBack: '|adj(A)| = |A|^{n-1} तथा adj(adj(A)) = |A|^{n-2} A',
+    formulaOrReaction: 'A \\cdot \\text{adj}(A) = |A| I_n',
+    tags: ['Algebra', 'Matrices', 'Adjoint'],
+    difficulty: 'medium'
+  },
+  {
+    id: 'fc-math-06',
+    subject: 'Mathematics',
+    chapter: 'Probability and Statistics',
+    front: 'What is the variance of the first n natural numbers {1, 2, 3, ..., n}?',
+    hindiFront: 'प्रथम n प्राकृत संख्याओं {1, 2, 3, ..., n} का प्रसरण क्या होता है?',
+    back: '\\sigma^2 = \\frac{n^2 - 1}{12}',
+    hindiBack: '\\sigma^2 = \\frac{n^2 - 1}{12}',
+    formulaOrReaction: '\\sigma^2 = \\frac{1}{n} \\sum_{i=1}^n i^2 - \\left(\\frac{1}{n} \\sum_{i=1}^n i\\right)^2 = \\frac{(n+1)(2n+1)}{6} - \\frac{(n+1)^2}{4} = \\frac{n^2 - 1}{12}',
+    tags: ['Statistics', 'Variance', 'Shortcuts'],
+    difficulty: 'easy'
+  }
+];
