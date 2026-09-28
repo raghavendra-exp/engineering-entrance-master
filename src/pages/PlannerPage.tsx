@@ -431,7 +431,7 @@ export const PlannerPage: React.FC = () => {
                 <label className="block text-xs font-bold uppercase text-slate-500 mb-2">
                   Target Daily Study Hours:
                 </label>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                   {[6, 8, 10, 12].map(hrs => (
                     <button
                       key={hrs}
@@ -503,7 +503,7 @@ export const PlannerPage: React.FC = () => {
                       {slot.activity}
                     </span>
                   </div>
-                  <span className="text-xs text-slate-500 dark:text-slate-400 pl-35 sm:pl-0">
+                  <span className="text-xs text-slate-500 dark:text-slate-400 sm:text-right">
                     {slot.focus}
                   </span>
                 </div>

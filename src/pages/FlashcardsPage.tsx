@@ -131,7 +131,7 @@ export const FlashcardsPage: React.FC = () => {
             </span>
           </div>
 
-          <div className="grid grid-cols-6 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
             {[
               { box: 'Box 1', days: '1 Day', count: boxCounts[1] || 0, color: 'bg-rose-500' },
               { box: 'Box 2', days: '3 Days', count: boxCounts[3] || 0, color: 'bg-amber-500' },

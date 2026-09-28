@@ -20,7 +20,10 @@ import {
   Atom,
   FlaskConical,
   Pi,
-  GraduationCap
+  GraduationCap,
+  Sun,
+  Moon,
+  Globe
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -29,7 +32,7 @@ interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile }) => {
-  const { currentRoute, navigate, language, errorNotebook } = useApp();
+  const { currentRoute, navigate, language, setLanguage, theme, toggleTheme, errorNotebook } = useApp();
 
   const handleNav = (route: string) => {
     navigate(route);
@@ -146,12 +149,31 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpenMobile, onCloseMobile })
         </div>
 
         {/* Footer info in sidebar */}
-        <div className="p-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 bg-slate-50/50 dark:bg-slate-950/40">
+        <div className="p-3 border-t border-slate-200 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400 bg-slate-50/50 dark:bg-slate-950/40 space-y-2.5">
           <div className="flex items-center justify-between font-medium">
             <span>Primary Source Rule</span>
             <span className="text-emerald-500 font-bold">100% Official</span>
           </div>
-          <p className="mt-1 text-[10px] leading-tight text-slate-400">
+
+          {/* Mobile Theme & Language Toggles */}
+          <div className="grid grid-cols-2 gap-2 pt-1 border-t border-slate-200/60 dark:border-slate-800">
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}
+              className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-slate-700 transition-all cursor-pointer"
+            >
+              <Globe className="w-3.5 h-3.5 text-blue-500" />
+              <span>{language === 'en' ? 'हिंदी' : 'English'}</span>
+            </button>
+            <button
+              onClick={toggleTheme}
+              className="flex items-center justify-center gap-1.5 py-1.5 px-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold hover:bg-slate-100 dark:hover:bg-slate-700 transition-all cursor-pointer"
+            >
+              {theme === 'dark' ? <Sun className="w-3.5 h-3.5 text-amber-400" /> : <Moon className="w-3.5 h-3.5 text-indigo-600" />}
+              <span>{theme === 'dark' ? 'Light' : 'Dark'}</span>
+            </button>
+          </div>
+
+          <p className="text-[10px] leading-tight text-slate-400">
             NTA • IITs • State CET Cells • AICTE • JoSAA verified
           </p>
         </div>

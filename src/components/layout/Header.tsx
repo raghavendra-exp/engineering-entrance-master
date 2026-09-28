@@ -34,17 +34,18 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="font-bold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                  ENGINEERING ENTRANCE MASTER
+                <span className="font-extrabold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <span className="sm:hidden">EEM INDIA</span>
+                  <span className="hidden sm:inline">ENGINEERING ENTRANCE MASTER</span>
                 </span>
-                <span className="hidden sm:inline-block px-1.5 py-0.2 text-[10px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 rounded">
-                  INDIA 2026
+                <span className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 rounded">
+                  2026
                 </span>
               </div>
-              <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 truncate max-w-[200px] sm:max-w-xs">
+              <p className="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 truncate max-w-[130px] sm:max-w-xs">
                 {language === 'hi' 
-                  ? 'सम्पूर्ण इंजीनियरिंग प्रवेश तैयारी एवं कॉलेज खोज' 
-                  : 'Preparation, PYQs, Mock Tests & Counselling'}
+                  ? 'सम्पूर्ण इंजीनियरिंग प्रवेश तैयारी' 
+                  : 'Preparation, PYQs & Mocks'}
               </p>
             </div>
           </button>
@@ -99,14 +100,14 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+            className="p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all cursor-pointer active:scale-95 shadow-xs"
             title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             aria-label="Toggle theme"
           >
             {theme === 'dark' ? (
-              <Sun className="w-4 h-4 text-amber-400" />
+              <Sun className="w-4 h-4 text-amber-400 animate-spin-slow" />
             ) : (
-              <Moon className="w-4 h-4 text-slate-600" />
+              <Moon className="w-4 h-4 text-indigo-600" />
             )}
           </button>
         </div>
